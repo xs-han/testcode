@@ -11,5 +11,8 @@
 #include "TestOpencvMyMatcher.h"
 #include "TestArrayandPointer.h"
 #include "TestBinFileIO.h"
+#include "TestOpencvMatxCons.h"
+#include "TestOpencvDecUsingKey.h"
+#include "TestTestStdVectorExchange.h"
 
 #endif // ALLTESTS_H_INCLUDED

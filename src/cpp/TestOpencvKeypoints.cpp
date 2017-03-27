@@ -23,8 +23,8 @@ void TestOpencvKeypoints::RunTests() const
 
     std::vector<cv::KeyPoint> key1, key2;
     cv::Mat desc1, out1, desc2, out2, outm;
-    cv::Ptr<cv::xfeatures2d::SIFT> fdetector1 = cv::xfeatures2d::SIFT::create(50);
-    cv::Ptr<cv::xfeatures2d::SIFT> fdetector2 = cv::xfeatures2d::SIFT::create(50);
+    cv::Ptr<cv::xfeatures2d::SIFT> fdetector1 = cv::xfeatures2d::SIFT::create(2000);
+    cv::Ptr<cv::xfeatures2d::SIFT> fdetector2 = cv::xfeatures2d::SIFT::create(2000);
     fdetector1->detectAndCompute(img1,cv::Mat(),key1,desc1,false);
     fdetector2->detectAndCompute(img2,cv::Mat(),key2,desc2,false);
 

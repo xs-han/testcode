@@ -21,8 +21,11 @@ int main()
 	TestFunctionParameters tfp = TestFunctionParameters();
 	TestArrayandPointer taap;
 	TestBinFileIO tbfio;
+	TestOpencvMatxCons tomc;
+	TestOpencvDecUsingKey toduk;
+	TestStdVectorExchange tstdvx;
 
-	Tests::MyTest(tbfio);
+	Tests::MyTest(tstdvx);
 
     return 0;
 }

@@ -42,4 +42,6 @@ void TestArrayandPointer::RunTests() const
 	TestDynamicArray(p);
 	cout << p[0] << p[1] << p[2] << endl;
 
+	int * b = a;
+
 }

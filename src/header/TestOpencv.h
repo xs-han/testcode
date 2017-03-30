@@ -12,6 +12,7 @@
 #include <opencv2/core/core.hpp>
 #include <opencv2/highgui/highgui.hpp>
 #include <opencv2/xfeatures2d/nonfree.hpp>
+#include <opencv2/imgproc/imgproc.hpp>
 
 class TestOpencv: public Tests {
 public:

@@ -24,8 +24,9 @@ int main()
 	TestOpencvMatxCons tomc;
 	TestOpencvDecUsingKey toduk;
 	TestStdVectorExchange tstdvx;
+	TestOpencvVideoCapture tovc;
 
-	Tests::MyTest(tstdvx);
+	Tests::MyTest(tovc);
 
     return 0;
 }

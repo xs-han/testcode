@@ -18,11 +18,11 @@ TestOpencvVideoCapture::TestOpencvVideoCapture() {
 
 void CaptureOneCamera()
 {
-    VideoCapture captrue(1);
+    VideoCapture captrue(0);
 
     VideoWriter write;
 
-    string outFloder = "/home/xushen/Desktop/imcap/";
+    string outFloder = "/home/xushen/Desktop/imcap/single/";
     string outFlie = outFloder + "video.avi";
 
     int w = static_cast<int>(captrue.get(CV_CAP_PROP_FRAME_WIDTH));
@@ -41,7 +41,7 @@ void CaptureOneCamera()
     }
     bool stop = false;
     bool start = false;
-    bool pause = false;
+    bool capflag = false;
     char key;
     Mat frame;
 
@@ -54,14 +54,14 @@ void CaptureOneCamera()
         }
         imshow("Video", frame);
 
-        key = waitKey(10);
+        key = waitKey(50);
         switch(key)
         {
 			case 's':
 			{
 				cout << "Start capture!" << endl;
 				start = true;
-				pause = false;
+				capflag = false;
 				break;
 			}
 			case 'q':
@@ -69,13 +69,20 @@ void CaptureOneCamera()
 				cout << "Quit" << endl;
 				stop = true;
 				start = false;
-				pause = false;
+				capflag = false;
 				break;
 			}
 			case 'p':
 			{
 				cout << "Current pause on." << endl;
-				pause = true;
+				capflag = false;
+				start = false;
+				break;
+			}
+			case 'c':
+			{
+				cout << "Capture one frame." << endl;
+				capflag = true;
 				start = false;
 				break;
 			}
@@ -84,6 +91,14 @@ void CaptureOneCamera()
 				if(key != -1)
 					cout << "Usage: 's'-> start; 'q'-> quit; 'p'-> pause." << endl;
 			}
+        }
+
+        if(capflag)
+        {
+			stringstream s;
+			s << setfill('0') << setw(6) << n++ << endl;
+			imwrite(outFloder + s.str() + ".jpg", frame);
+			capflag = false;
         }
 
         if(start)
@@ -111,8 +126,8 @@ void CaptureOneCamera()
 void CaptureTwoCameras()
 {
 
-    VideoCapture captrue1(0);
-    VideoCapture captrue2(1);
+    VideoCapture captrue1(1);
+    VideoCapture captrue2(2);
 
     VideoWriter write1;
     VideoWriter write2;
@@ -138,7 +153,7 @@ void CaptureTwoCameras()
     }
     bool stop = false;
     bool start = false;
-    bool pause = false;
+    bool capflag = false;
     char key;
     Mat frame1, frame2;
 
@@ -159,7 +174,7 @@ void CaptureTwoCameras()
 			{
 				cout << "Start capture!" << endl;
 				start = true;
-				pause = false;
+				capflag = false;
 				break;
 			}
 			case 'q':
@@ -167,21 +182,37 @@ void CaptureTwoCameras()
 				cout << "Quit" << endl;
 				stop = true;
 				start = false;
-				pause = false;
+				capflag = false;
 				break;
 			}
 			case 'p':
 			{
 				cout << "Current pause on." << endl;
-				pause = true;
+				capflag = false;
+				start = false;
+				break;
+			}
+			case 'c':
+			{
+				cout << "Capture one frame." << endl;
+				capflag = true;
 				start = false;
 				break;
 			}
 			default:
 			{
 				if(key != -1)
-					cout << "Usage: 's'-> start; 'q'-> quit; 'p'-> pause." << endl;
+					cout << "Usage: 's'-> start; 'q'-> quit; 'p'-> capture." << endl;
 			}
+        }
+
+        if(capflag)
+        {
+			stringstream s;
+			s << setfill('0') << setw(6) << n++ << endl;
+			imwrite(outFloder1 + s.str() + ".jpg", frame1);
+			imwrite(outFloder2 + s.str() + ".jpg", frame2);
+			capflag = false;
         }
 
         if(start)

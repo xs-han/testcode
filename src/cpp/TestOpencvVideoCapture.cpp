@@ -20,7 +20,7 @@ void CaptureOneCamera()
 {
     VideoCapture captrue(1);
 
-    VideoWriter write;
+    //VideoWriter write;
 
     string outFloder = "/home/xushen/Desktop/imcap/single/";
     string outFlie = outFloder + "video.avi";
@@ -32,7 +32,7 @@ void CaptureOneCamera()
 
     double r = captrue.get(CV_CAP_PROP_FPS);
 
-    write.open(outFlie.c_str(), CV_FOURCC_DEFAULT, r, S, true);
+    //write.open(outFlie.c_str(), CV_FOURCC_DEFAULT, r, S, true);
 
     if (!captrue.isOpened())
     {
@@ -106,7 +106,7 @@ void CaptureOneCamera()
 			stringstream s;
 			s << setfill('0') << setw(6) << n++ << endl;
 			imwrite(outFloder + s.str().substr(0,6) + ".jpg", frame);
-			write.write(frame);
+			//write.write(frame);
         }
 
         if(stop)
@@ -117,8 +117,8 @@ void CaptureOneCamera()
     }
 
     captrue.release();
-    write.release();
-	cvDestroyWindow("Video");
+    //write.release();
+	cvDestroyAllWindows();
 	return;
 }
 

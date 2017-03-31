@@ -18,7 +18,7 @@ TestOpencvVideoCapture::TestOpencvVideoCapture() {
 
 void CaptureOneCamera()
 {
-    VideoCapture captrue(0);
+    VideoCapture captrue(1);
 
     VideoWriter write;
 
@@ -97,7 +97,7 @@ void CaptureOneCamera()
         {
 			stringstream s;
 			s << setfill('0') << setw(6) << n++ << endl;
-			imwrite(outFloder + s.str() + ".jpg", frame);
+			imwrite(outFloder + s.str().substr(0,6)  + ".jpg", frame);
 			capflag = false;
         }
 
@@ -105,7 +105,7 @@ void CaptureOneCamera()
         {
 			stringstream s;
 			s << setfill('0') << setw(6) << n++ << endl;
-			imwrite(outFloder + s.str() + ".jpg", frame);
+			imwrite(outFloder + s.str().substr(0,6) + ".jpg", frame);
 			write.write(frame);
         }
 
@@ -129,8 +129,8 @@ void CaptureTwoCameras()
     VideoCapture captrue1(1);
     VideoCapture captrue2(2);
 
-    VideoWriter write1;
-    VideoWriter write2;
+    //VideoWriter write1;
+    //VideoWriter write2;
 
     string outFloder1 = "/home/xushen/Desktop/imcap/image_0/";
     string outFloder2 = "/home/xushen/Desktop/imcap/image_1/";
@@ -143,8 +143,8 @@ void CaptureTwoCameras()
 
     double r = captrue1.get(CV_CAP_PROP_FPS);
 
-    write1.open(outFlie1.c_str(), CV_FOURCC_DEFAULT, r, S, true);
-    write2.open(outFlie2.c_str(), CV_FOURCC_DEFAULT, r, S, true);
+    //write1.open(outFlie1.c_str(), CV_FOURCC_DEFAULT, r, S, true);
+    //write2.open(outFlie2.c_str(), CV_FOURCC_DEFAULT, r, S, true);
 
     if ((!captrue1.isOpened()) || (!captrue2.isOpened()))
     {
@@ -210,8 +210,8 @@ void CaptureTwoCameras()
         {
 			stringstream s;
 			s << setfill('0') << setw(6) << n++ << endl;
-			imwrite(outFloder1 + s.str() + ".jpg", frame1);
-			imwrite(outFloder2 + s.str() + ".jpg", frame2);
+			imwrite(outFloder1 + s.str().substr(0,6) + ".jpg", frame1);
+			imwrite(outFloder2 + s.str().substr(0,6) + ".jpg", frame2);
 			capflag = false;
         }
 
@@ -219,10 +219,10 @@ void CaptureTwoCameras()
         {
 			stringstream s;
 			s << setfill('0') << setw(6) << n++ << endl;
-			imwrite(outFloder1 + s.str() + ".jpg", frame1);
-			imwrite(outFloder2 + s.str() + ".jpg", frame2);
-			write1.write(frame1);
-			write2.write(frame2);
+			imwrite(outFloder1 + s.str().substr(0,6) + ".jpg", frame1);
+			imwrite(outFloder2 + s.str().substr(0,6) + ".jpg", frame2);
+			//write1.write(frame1);
+			//write2.write(frame2);
         }
 
         if(stop)
@@ -234,8 +234,8 @@ void CaptureTwoCameras()
 
     captrue1.release();
     captrue2.release();
-    write1.release();
-    write2.release();
+    //write1.release();
+    //write2.release();
 	cvDestroyAllWindows();
 	return;
 }

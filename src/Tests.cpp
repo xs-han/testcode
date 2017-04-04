@@ -1,4 +1,4 @@
-#include "../header/Tests.h"
+#include "Tests.h"
 
 Tests::Tests()
 {

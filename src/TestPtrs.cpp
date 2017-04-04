@@ -1,4 +1,4 @@
-#include "../header/TestPtrs.h"
+#include "TestPtrs.h"
 
 TestPtrs::TestPtrs()
 {

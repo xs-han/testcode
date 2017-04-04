@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestBinFileIO.h"
+#include "TestBinFileIO.h"
 #include <fstream>
 
 TestBinFileIO::TestBinFileIO() {

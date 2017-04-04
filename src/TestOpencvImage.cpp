@@ -1,4 +1,4 @@
-#include "../header/TestOpencvImage.h"
+#include "TestOpencvImage.h"
 
 TestOpencvImage::TestOpencvImage()
 {

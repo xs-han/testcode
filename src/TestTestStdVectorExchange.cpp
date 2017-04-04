@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "../header/TestTestStdVectorExchange.h"
+#include "TestTestStdVectorExchange.h"
 
 TestStdVectorExchange::TestStdVectorExchange() {
 	// TODO Auto-generated constructor stub

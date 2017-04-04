@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestFunctionParameters.h"
+#include "TestFunctionParameters.h"
 
 TestFunctionParameters::TestFunctionParameters():m_test(0) {
 	// TODO Auto-generated constructor stub

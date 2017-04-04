@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestOpencvDecUsingKey.h"
+#include "TestOpencvDecUsingKey.h"
 
 TestOpencvDecUsingKey::TestOpencvDecUsingKey() {
 	// TODO Auto-generated constructor stub

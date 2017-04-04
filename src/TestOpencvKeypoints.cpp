@@ -1,4 +1,4 @@
-#include "../header/TestOpencvKeypoints.h"
+#include "TestOpencvKeypoints.h"
 
 TestOpencvKeypoints::TestOpencvKeypoints()
 {

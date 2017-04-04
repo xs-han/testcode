@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestArrayandPointer.h"
+#include "TestArrayandPointer.h"
 
 TestArrayandPointer::TestArrayandPointer() {
 	// TODO Auto-generated constructor stub

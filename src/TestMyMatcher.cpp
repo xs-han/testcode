@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "../header/TestOpencvMyMatcher.h"
+#include "TestOpencvMyMatcher.h"
 
 TestOpencvMyMatcher::TestOpencvMyMatcher() {
 	// TODO Auto-generated constructor stub

@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "../header/TestStdMap.h"
+#include "TestStdMap.h"
 //#include <string>
 #include <map>
 

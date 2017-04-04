@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestOpencvMatxCons.h"
+#include "TestOpencvMatxCons.h"
 
 TestOpencvMatxCons::TestOpencvMatxCons() {
 	// TODO Auto-generated constructor stub

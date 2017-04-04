@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestOpencvVideoCapture.h"
+#include "TestOpencvVideoCapture.h"
 #include <string>
 #include <iomanip>
 using namespace cv;

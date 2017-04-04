@@ -6,7 +6,7 @@
 // Description : Hello World in C++, Ansi-style
 //============================================================================
 
-#include "header/AllTests.h"
+#include "AllTests.h"
 
 using namespace std;
 

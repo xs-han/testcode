@@ -5,7 +5,7 @@
  *      Author: xushen
  */
 
-#include "/home/xushen/workspace/Tests/src/header/TestOpencv.h"
+#include "TestOpencv.h"
 
 TestOpencv::TestOpencv() {
 	// TODO Auto-generated constructor stub

@@ -1,4 +1,4 @@
-#include "../header/TestOpencvMat.h"
+#include "TestOpencvMat.h"
 
 TestOpencvMat::TestOpencvMat()
 {

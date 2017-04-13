@@ -167,7 +167,7 @@ void CaptureTwoCameras()
         imshow("Video1", frame1);
         imshow("Video2", frame2);
 
-        key = waitKey(10);
+        key = waitKey(50);
         switch(key)
         {
 			case 's':

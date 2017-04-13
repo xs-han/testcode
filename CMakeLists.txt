@@ -16,5 +16,6 @@ aux_source_directory(${PROJECT_SOURCE_DIR}/src TESTS_DIR_SRCS)
 add_library(${PROJECT_NAME} SHARED ${TESTS_DIR_SRCS})
 target_link_libraries(${PROJECT_NAME} ${OpenCV_LIBS})
 
+set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 add_executable(main "utils/Main.cpp")
 target_link_libraries( main ${PROJECT_NAME} )

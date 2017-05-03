@@ -4,7 +4,7 @@ project(Tests)
 # The version number.
 set (TESTS_VERSION_MAJOR 1)
 set (TESTS_VERSION_MINOR 0)
-
+add_compile_options(-std=c++11)
 find_package(OpenCV 3.2.0 REQUIRED)
 include_directories(${PROJECT_SOURCE_DIR}/include ${OpenCV_INCLUDE_DIRS})
 

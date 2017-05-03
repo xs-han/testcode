@@ -25,8 +25,9 @@ int main()
 	TestOpencvDecUsingKey toduk;
 	TestStdVectorExchange tstdvx;
 	TestOpencvVideoCapture tovc;
+    TestStdCopy tsc;
 
-	Tests::MyTest(tovc);
+    Tests::MyTest(tsc);
 
     return 0;
 }

@@ -45,4 +45,11 @@ void TestOpencvMatxCons::RunTests() const
 	}
 	cout << m3 << endl;
 	cout << m2 * m3 << endl;
+
+    cv::Matx31d t(1,2,3);
+    cv::Matx31d t2;
+    t2 = t;
+    t(2) = 0;
+    cout << "t is: " << t << endl;
+    cout << "t2 is: " << t2 << endl;
 }

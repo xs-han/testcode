@@ -23,4 +23,15 @@ void TestOpencvMat::RunTests() const
     cout << "h * 2 is:" << h * 2 << endl;
     cout << "h + 2 is:" << h + 2 << endl;
     cout << "max(h,2) is:" << cv::max(h,2) << endl;
+
+    // Mat copy
+    cv::Mat m1 = cv::Mat::zeros(4,4,CV_32F);
+    cv::Mat m2 = m1.clone();
+    cout << "m1 is: \n" << m1 << endl;
+    cout << "m2 is: \n" << m2 << endl;
+
+    m1.at<float>(3,3) = 1;
+    cout << "m1 is: \n" << m1 << endl;
+    cout << "m2 is: \n" << m2 << endl;
+
 }

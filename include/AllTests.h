@@ -15,5 +15,6 @@
 #include "TestOpencvDecUsingKey.h"
 #include "TestTestStdVectorExchange.h"
 #include "TestOpencvVideoCapture.h"
+#include "TestStdCopy.h"
 
 #endif // ALLTESTS_H_INCLUDED

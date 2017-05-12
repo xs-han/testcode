@@ -27,7 +27,7 @@ int main()
 	TestOpencvVideoCapture tovc;
     TestStdCopy tsc;
 
-    Tests::MyTest(tsc);
+    Tests::MyTest(tovc);
 
     return 0;
 }

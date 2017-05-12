@@ -16,7 +16,7 @@ TestOpencvVideoCapture::TestOpencvVideoCapture() {
 
 }
 
-void CaptureOneCamera()
+void CaptureOneCamera(int delaytime)
 {
     VideoCapture captrue(1);
 
@@ -54,7 +54,7 @@ void CaptureOneCamera()
         }
         imshow("Video", frame);
 
-        key = waitKey(50);
+        key = waitKey(delaytime);
         switch(key)
         {
 			case 's':
@@ -123,7 +123,7 @@ void CaptureOneCamera()
 }
 
 
-void CaptureTwoCameras()
+void CaptureTwoCameras(int delaytime)
 {
 
     VideoCapture captrue1(1);
@@ -167,7 +167,7 @@ void CaptureTwoCameras()
         imshow("Video1", frame1);
         imshow("Video2", frame2);
 
-        key = waitKey(50);
+        key = waitKey(delaytime);
         switch(key)
         {
 			case 's':
@@ -241,16 +241,16 @@ void CaptureTwoCameras()
 }
 
 void TestOpencvVideoCapture::RunTests() const {
-	int n = 1;
+    int n = 1; int delaytime = 50;
 	if(n == 1)
 	{
 		cout << "One camera is set. Default is one camera" << endl;
-		CaptureOneCamera();
+        CaptureOneCamera(delaytime);
 	}
 	else if(n == 2)
 	{
 		cout << "Tow cameras are set." << endl;
-		CaptureTwoCameras();
+        CaptureTwoCameras(delaytime);
 	}
 	else{
 		cout << "Only one or two carmeras are legal. Quitting..." << endl;

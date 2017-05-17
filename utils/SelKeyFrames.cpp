@@ -12,5 +12,5 @@ int main(int argc, char * argv[])
     TestOpencvSelKeyFrames tosk;
 
     tosk.GetAllFiles(inputDir, outputDir);
-    tosk.CalcKeyFrames(6,3000,0.5);
+    tosk.CalcKeyFrames(6,3000,0.5,"surf");
 }

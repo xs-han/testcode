@@ -26,8 +26,9 @@ int main()
 	TestStdVectorExchange tstdvx;
 	TestOpencvVideoCapture tovc;
     TestStdCopy tsc;
+    TestOpencvSurf tos;
 
-    Tests::MyTest(tovc);
+    Tests::MyTest(tos);
 
     return 0;
 }

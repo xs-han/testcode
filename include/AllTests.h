@@ -17,5 +17,6 @@
 #include "TestOpencvVideoCapture.h"
 #include "TestStdCopy.h"
 #include "TestOpencvSelKeyFrames.h"
+#include "TestOpencvSurf.h"
 
 #endif // ALLTESTS_H_INCLUDED

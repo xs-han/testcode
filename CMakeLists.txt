@@ -6,7 +6,7 @@ set (TESTS_VERSION_MAJOR 1)
 set (TESTS_VERSION_MINOR 0)
 add_compile_options(-std=c++11)
 find_package(OpenCV 3.2.0 REQUIRED)
-include_directories(${PROJECT_SOURCE_DIR}/include ${OpenCV_INCLUDE_DIRS})
+include_directories(${PROJECT_SOURCE_DIR}/include ${PROJECT_SOURCE_DIR} ${OpenCV_INCLUDE_DIRS})
 
 set(CMAKE_LIBRARY_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/lib)
 FILE(GLOB_RECURSE TESTS_DIR_INCLUDE "${PROJECT_SOURCE_DIR}/include/*.h")

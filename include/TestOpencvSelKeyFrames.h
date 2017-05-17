@@ -22,7 +22,7 @@ public:
     ~TestOpencvSelKeyFrames();
     void RunTests() const;
     void GetAllFiles(string, string);
-    void CalcKeyFrames(int noctaves = 16, int npoints = 3000, double factor = 0.3);
+    void CalcKeyFrames(int noctaves = 16, int npoints = 3000, double factor = 0.3, string d = "sift");
     void CalcKeyFramesOrb(int noctaves = 8, int npoints = 1000, double factor = 0.3);
 private:
     int GetNumMatches(const Mat & refDesc, const Mat & Desc);

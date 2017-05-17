@@ -53,10 +53,16 @@ void TestOpencvSelKeyFrames::GetAllFiles(string InputDir, string OutputDir)
     }
 }
 
-void TestOpencvSelKeyFrames::CalcKeyFrames(int noctaves, int npoints, double factor)
+void TestOpencvSelKeyFrames::CalcKeyFrames(int noctaves, int npoints, double factor, string d)
 {
     refFrame = imread(inputDir + allFiles[0]);
-    cv::Ptr<cv::Feature2D> fdetector = cv::xfeatures2d::SIFT::create(npoints, noctaves);
+    cv::Ptr<cv::Feature2D> fdetector;
+    if(d == "sift")
+        fdetector = cv::xfeatures2d::SIFT::create(npoints, noctaves);
+    else if(d == "surf")
+        fdetector = cv::xfeatures2d::SURF::create(npoints, noctaves, 6);
+    else
+        cout << "error in descs" << endl; exit(-1);
     fdetector->detectAndCompute(refFrame,cv::Mat(),refKey,refDesc,false);
     //refMatches = npoints;
 

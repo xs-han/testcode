@@ -3,7 +3,7 @@
 
 int main(int argc, char * argv[])
 {
-    if(argc != 3)
+    if(argc != 7)
     {
         cerr << "Usage: selKeyFrames InputDir OutputDir desc nps nocts factor";
         exit(-1);
@@ -12,5 +12,5 @@ int main(int argc, char * argv[])
     TestOpencvSelKeyFrames tosk;
 
     tosk.GetAllFiles(inputDir, outputDir);
-    tosk.CalcKeyFrames(atoi(argv[5]),atoi(argv[4]),atoi(argv[6]),argv[3]);
+    tosk.CalcKeyFrames(atoi(argv[5]),atoi(argv[4]),atof(argv[6]),argv[3]);
 }

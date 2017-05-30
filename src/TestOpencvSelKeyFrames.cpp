@@ -62,7 +62,7 @@ void TestOpencvSelKeyFrames::CalcKeyFrames(int noctaves, int npoints, double fac
     else if(d == "surf")
         fdetector = cv::xfeatures2d::SURF::create(npoints, noctaves, 6);
     else
-        cout << "error in descs" << endl; exit(-1);
+        {cout << "error in descs" << endl; exit(-1);}
     fdetector->detectAndCompute(refFrame,cv::Mat(),refKey,refDesc,false);
     //refMatches = npoints;
 
@@ -72,15 +72,21 @@ void TestOpencvSelKeyFrames::CalcKeyFrames(int noctaves, int npoints, double fac
         Mat crtFrame = imread(inputDir + allFiles[i]);
         vector<KeyPoint> crtKey;
         Mat crtDesc;
-        cv::Ptr<cv::Feature2D> fdetector = cv::xfeatures2d::SIFT::create(npoints, noctaves);
-        fdetector->detectAndCompute(crtFrame,cv::Mat(),crtKey,crtDesc,false);
+        cv::Ptr<cv::Feature2D> fdetector2;
+        if(d == "sift")
+            fdetector2 = cv::xfeatures2d::SIFT::create(npoints, noctaves);
+        else if(d == "surf")
+            fdetector2 = cv::xfeatures2d::SURF::create(npoints, noctaves, 6);
+        else
+            {cout << "error in descs" << endl; exit(-1);}
+        fdetector2->detectAndCompute(crtFrame,cv::Mat(),crtKey,crtDesc,false);
 
         int nmatches = GetNumMatches(refDesc, crtDesc);
         if(nmatches < refDesc.rows * factor || i == 0)
         {
             if(imwrite((outputDir + allFiles[i]), crtFrame))
             {
-                cout << "Saving " << allFiles[i] << endl;
+                cout << "Saving " << allFiles[i] << " with " << crtDesc.rows << " descs." << endl;
             }
             else
             {

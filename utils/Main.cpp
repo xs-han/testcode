@@ -16,7 +16,8 @@ int main()
     TestOpencvMat testMat;
     TestOpencvImage testopencvimage;
     TestOpencvKeypoints tockp;
-	TestOpencvMyMatcher tmm;
+    TestOpencvMyMatcher tmm; tmm.setMatchFiles("/home/xushen/Desktop/MediaSoc/KeyFrames/forward/000159.jpg",
+                                               "/home/xushen/Desktop/MediaSoc/KeyFrames/rleft/000191.jpg");
 	TestStdMap tsm;
 	TestFunctionParameters tfp = TestFunctionParameters();
 	TestArrayandPointer taap;
@@ -28,7 +29,7 @@ int main()
     TestStdCopy tsc;
     TestOpencvSurf tos;
 
-    Tests::MyTest(tos);
+    Tests::MyTest(tmm);
 
     return 0;
 }

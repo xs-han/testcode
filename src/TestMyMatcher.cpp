@@ -7,10 +7,10 @@
 
 #include "TestOpencvMyMatcher.h"
 
-TestOpencvMyMatcher::TestOpencvMyMatcher() {
-	// TODO Auto-generated constructor stub
+//TestOpencvMyMatcher::TestOpencvMyMatcher() {
+//	// TODO Auto-generated constructor stub
 
-}
+//}
 
 TestOpencvMyMatcher::~TestOpencvMyMatcher() {
 	// TODO Auto-generated destructor stub
@@ -18,8 +18,8 @@ TestOpencvMyMatcher::~TestOpencvMyMatcher() {
 
 void TestOpencvMyMatcher::RunTests() const
 {
-    cv::Mat img1 = cv::imread("/home/xushen/Pictures/Webcam/image_6.png", cv::IMREAD_COLOR);
-    cv::Mat img2 = cv::imread("/home/xushen/Pictures/Webcam/image_8.jpg", cv::IMREAD_COLOR);
+    cv::Mat img1 = cv::imread(imgf1, cv::IMREAD_COLOR);
+    cv::Mat img2 = cv::imread(imgf2, cv::IMREAD_COLOR);
 
     if(img1.empty() || img2.empty())
     {
@@ -29,8 +29,8 @@ void TestOpencvMyMatcher::RunTests() const
 
     std::vector<cv::KeyPoint> key1, key2;
     cv::Mat desc1, out1, desc2, out2, outm;
-    cv::Ptr<cv::Feature2D> fdetector1 = cv::xfeatures2d::SIFT::create(500);
-    cv::Ptr<cv::Feature2D> fdetector2 = cv::xfeatures2d::SIFT::create(500);
+    cv::Ptr<cv::Feature2D> fdetector1 = cv::xfeatures2d::SURF::create(1000);
+    cv::Ptr<cv::Feature2D> fdetector2 = cv::xfeatures2d::SURF::create(1000);
     fdetector1->detectAndCompute(img1,cv::Mat(),key1,desc1,false);
     fdetector2->detectAndCompute(img2,cv::Mat(),key2,desc2,false);
 
@@ -51,7 +51,7 @@ void TestOpencvMyMatcher::RunTests() const
 
     for(int i = 0; i < desc1.rows; i++)
     {
-        double mindis = 1000;
+        double mindis = 1000000;
         int minid = 0;
         double dis = 0;
     	for(int j = 0; j < desc2.rows; j++)
@@ -64,7 +64,7 @@ void TestOpencvMyMatcher::RunTests() const
     		}
     	}
 
-    	double mindis_back = 1000;
+        double mindis_back = 1000000;
     	int minid_back = 0;
 
     	for(int k = 0; k < desc1.rows; k++)
@@ -78,7 +78,10 @@ void TestOpencvMyMatcher::RunTests() const
     		}
     	}
     	std::vector<cv::DMatch> a;
-    	if(minid_back == i && mindis < 200)
+        cv::KeyPoint & key1sel = key1[i];
+        cv::KeyPoint & key2sel = key2[minid];
+        if(minid_back == i /*&& mindis < 200*/ && abs(key1sel.response - key2sel.response) < 10000
+                 && abs(key1sel.angle - key2sel.angle) < 45)
     	{
     		a.clear();
     		a.push_back(cv::DMatch(i,minid,0,mindis));

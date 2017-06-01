@@ -16,7 +16,7 @@ TestOpencvVideoCapture::TestOpencvVideoCapture() {
 
 }
 
-void CaptureOneCamera(int delaytime)
+void TestOpencvVideoCapture::CaptureOneCamera(int delaytime) const
 {
     VideoCapture captrue(1);
 
@@ -123,7 +123,7 @@ void CaptureOneCamera(int delaytime)
 }
 
 
-void CaptureTwoCameras(int delaytime)
+void TestOpencvVideoCapture::CaptureTwoCameras(int delaytime) const
 {
 
     VideoCapture captrue1(1);

@@ -20,6 +20,9 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY ${PROJECT_SOURCE_DIR}/bin)
 add_executable(main "utils/Main.cpp")
 target_link_libraries( main ${PROJECT_NAME} )
 
+add_executable(VideoCapture "utils/VideoCapture.cpp")
+target_link_libraries( VideoCapture ${PROJECT_NAME} )
+
 add_executable(selKeyFrames "utils/SelKeyFrames.cpp")
 target_link_libraries( selKeyFrames ${PROJECT_NAME} )
 

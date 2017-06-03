@@ -23,8 +23,8 @@ void TestOpencvSurf::RunTests() const
 
     std::vector<cv::KeyPoint> key1, key2;
     cv::Mat desc1, out1, desc2, out2, outm;
-    cv::Ptr<cv::Feature2D> fdetector1 = cv::xfeatures2d::SURF::create(1000,8);
-    cv::Ptr<cv::Feature2D> fdetector2 = cv::xfeatures2d::SURF::create(1000,8);
+    cv::Ptr<cv::Feature2D> fdetector1 = cv::xfeatures2d::SURF::create(500,8);
+    cv::Ptr<cv::Feature2D> fdetector2 = cv::xfeatures2d::SURF::create(500,8);
     cv::Ptr<cv::Feature2D> fdesc1 = cv::xfeatures2d::SIFT::create(1000,8);
     cv::Ptr<cv::Feature2D> fdesc2 = cv::xfeatures2d::SIFT::create(1000,8);
 

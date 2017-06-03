@@ -16,7 +16,7 @@ int main()
     TestOpencvMat testMat;
     TestOpencvImage testopencvimage;
     TestOpencvKeypoints tockp;
-    TestOpencvMyMatcher tmm; tmm.setMatchFiles("/home/xushen/Desktop/MediaSoc/KeyFrames/forward/000159.jpg",
+    TestOpencvMyMatcher tmm; tmm.setMatchFiles("/home/xushen/Desktop/MediaSoc/KeyFrames/forward/000176.jpg",
                                                "/home/xushen/Desktop/MediaSoc/KeyFrames/rleft/000191.jpg");
 	TestStdMap tsm;
 	TestFunctionParameters tfp = TestFunctionParameters();
@@ -28,8 +28,11 @@ int main()
 	TestOpencvVideoCapture tovc;
     TestStdCopy tsc;
     TestOpencvSurf tos;
+    TestOpencvMyMatcher tmmfiles;
+    tmmfiles.getKeyAndDescs("/home/xushen/Desktop/MediaSoc/KeyFrames/forward/000190+60.yaml",tmmfiles.img1, tmmfiles.key1, tmmfiles.desc1);
+    tmmfiles.extractDescs("/home/xushen/Desktop/MediaSoc/KeyFrames/rleft/000196.jpg", tmmfiles.img2, tmmfiles.key2, tmmfiles.desc2);
 
-    Tests::MyTest(tmm);
+    Tests::MyTest2(tmmfiles);
 
     return 0;
 }

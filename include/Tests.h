@@ -10,9 +10,10 @@ class Tests
     public:
         Tests();
         virtual void RunTests() const =0;
-        virtual void Runtests() {};
+        virtual void RunTests() {}
         virtual ~Tests();
         static void MyTest(const Tests & t){t.RunTests();}
+        static void MyTest2(Tests & t){t.RunTests();}
 
     protected:
 

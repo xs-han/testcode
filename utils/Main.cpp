@@ -29,8 +29,8 @@ int main()
     TestStdCopy tsc;
     TestOpencvSurf tos;
     TestOpencvMyMatcher tmmfiles;
-    tmmfiles.getKeyAndDescs("/home/xushen/Desktop/MediaSoc/KeyFrames/forward/000190+60.yaml",tmmfiles.img1, tmmfiles.key1, tmmfiles.desc1);
-    tmmfiles.extractDescs("/home/xushen/Desktop/MediaSoc/KeyFrames/rleft/000196.jpg", tmmfiles.img2, tmmfiles.key2, tmmfiles.desc2);
+    tmmfiles.getKeyAndDescs("/home/xushen/Desktop/MediaSoc/KeyFrames/forward/000204+85.yaml",tmmfiles.img1, tmmfiles.key1, tmmfiles.desc1);
+    tmmfiles.getKeyAndDescs("/home/xushen/Desktop/MediaSoc/KeyFrames/rleft/000196.yaml", tmmfiles.img2, tmmfiles.key2, tmmfiles.desc2);
 
     Tests::MyTest2(tmmfiles);
 

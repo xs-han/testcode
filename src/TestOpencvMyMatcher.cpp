@@ -18,8 +18,8 @@ TestOpencvMyMatcher::~TestOpencvMyMatcher() {
 
 void TestOpencvMyMatcher::getKeyAndDescs(string imgf, cv::Mat & img, std::vector<cv::KeyPoint> & key, cv::Mat & desc)
 {
-    img = cv::Mat::zeros(480,640,CV_8U);
     cv::FileStorage fs1(imgf, cv::FileStorage::READ);
+    read(fs1["Image"], img);
     read(fs1["KeyPoint"], key);
     read(fs1["Mat"], desc);
     fs1.release();
@@ -177,8 +177,8 @@ void TestOpencvMyMatcher::RunTests()
         std::vector<cv::DMatch> a;
         cv::KeyPoint & key1sel = key1[i];
         cv::KeyPoint & key2sel = key2[minid];
-        if(minid_back == i && mindis < 100/* && abs(key1sel.response - key2sel.response) < 10000*/
-                 && abs(key1sel.angle - key2sel.angle) < 30)
+        if(minid_back == i && mindis < 2/* && abs(key1sel.response - key2sel.response) < 10000*/
+                 /*&& abs(key1sel.angle - key2sel.angle) < 30*/)
         {
             a.clear();
             a.push_back(cv::DMatch(i,minid,0,mindis));
